@@ -2,7 +2,7 @@
 
 ```sql
 CREATE DATABASE cse9_534;
-USE company_db;
+USE cse9_534;
 ```
 
 ## 2. Create DEPARTMENT table
