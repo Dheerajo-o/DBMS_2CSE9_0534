@@ -1,7 +1,7 @@
 ## 1. Create Database
 
 ```sql
-CREATE DATABASE company_db;
+CREATE DATABASE cse9_534;
 USE company_db;
 ```
 
