@@ -1,23 +1,14 @@
-## 1. Create Database
-
-```sql
+-- 1. Create Database
 CREATE DATABASE cse9_534;
 USE cse9_534;
-```
 
-## 2. Create DEPARTMENT table
-
-```sql
-
+-- 2. Create DEPARTMENT table
 CREATE TABLE department (
-    deptno INT (2) PRIMARY KEY,
+    deptno INT(2) PRIMARY KEY,
     dname VARCHAR(15) NOT NULL
 );
-```
 
-## 3. Create EMPLOYEE table
-
-```sql
+-- 3. Create EMPLOYEE table
 CREATE TABLE employee (
     empno INT(4) PRIMARY KEY,
     ename VARCHAR(20) NOT NULL,
@@ -29,22 +20,15 @@ CREATE TABLE employee (
     deptno INT(2),
     FOREIGN KEY (deptno) REFERENCES department(deptno)
 );
-```
 
-## 4. INSERT VALUES INTO DEPARTMENT
-
-```sql
-
+-- 4. Insert values into DEPARTMENT
 INSERT INTO department VALUES
 (10,'RESEARCH'),
 (20,'ACCOUNTING'),
 (30,'SALES'),
 (40,'OPERATIONS');
-```
 
-## 5. INSERT VALUES INTO EMPLOYEE
-
-```sql
+-- 5. Insert values into EMPLOYEE
 INSERT INTO employee VALUES
 (7369,'SMITH','CLERK',7902,'1980-12-17',800,NULL,20),
 (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30),
@@ -60,56 +44,34 @@ INSERT INTO employee VALUES
 (7900,'JAMES','CLERK',7698,'1981-12-03',950,NULL,30),
 (7902,'FORD','ANALYST',7566,'1981-12-03',3000,NULL,20),
 (7934,'MILLER','CLERK',7782,'1982-01-23',1300,NULL,10);
-```
 
-### Show Records
-
-```sql
+-- Show Records
 SELECT * FROM employee;
 SELECT * FROM department;
-```
 
-## REQUIRED QUERIES
+-- REQUIRED QUERIES
 
-## 1. Create Employee_master table with data using Employee table
-
-```sql
+-- 1. Create Employee_master table with data using Employee table
 CREATE TABLE employee_master AS
 SELECT * FROM employee;
-```
 
-## 2. Delete all records from Employee_master whose DeptNo is 10
-
-```sql
+-- 2. Delete all records from Employee_master whose DeptNo is 10
 DELETE FROM employee_master
 WHERE deptno = 10;
-```
 
-## 3. Update salary by 10% for DeptNo 20
-
-```sql
+-- 3. Update salary by 10% for DeptNo 20
 UPDATE employee_master
 SET sal = sal + (sal * 0.10)
 WHERE deptno = 20;
-```
 
-## 4. Alter SAL with size 10,2 in Employee_master
-
-```sql
+-- 4. Alter SAL with size 10,2 in Employee_master
 ALTER TABLE employee_master
 MODIFY sal DECIMAL(10,2);
-```
 
-## 5. Drop Employee_master table
-
-```sql
+-- 5. Drop Employee_master table
 DROP TABLE employee_master;
-```
----
-## -- CHECK OUTPUT
 
-```sql
+-- CHECK OUTPUT
 SELECT * FROM employee;
 SELECT * FROM department;
 SELECT * FROM employee_master;
-```
